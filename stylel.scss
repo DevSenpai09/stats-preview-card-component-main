@@ -1,0 +1,137 @@
+// IMPORTS
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+// VARIABLES
+$veryDarkBlue: hsl(233, 47%, 7%);
+$darkDesaturatedBlue: hsl(244, 38%, 16%);
+$softViolet: hsl(277, 64%, 61%);
+$white: hsl(0, 0%, 100%);
+$slightlyTransparentWhite: hsla(0, 0%, 100%, 0.75);
+$veryslightlyTransparentWhite: hsla(0, 0%, 100%, 0.6);
+$border: 10px;
+
+// STYLES
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+body {
+  padding: 45px;
+  display: grid;
+  place-items: center;
+  background-color: $veryDarkBlue;
+
+  .card {
+    max-width: 375px;
+    border-radius: $border;
+    background-color: $darkDesaturatedBlue;
+    display: grid;
+
+    .img_con {
+      width: 100%;
+      height: 250px;
+      background-image: url(./images/image-header-mobile.jpg);
+      background-size: 100% 100%;
+      border-top-left-radius: $border;
+      border-top-right-radius: $border;
+      background-color: $softViolet;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $softViolet;
+        position: absolute;
+        opacity: 0.3;
+        border-top-left-radius: $border;
+        border-top-right-radius: $border;
+      }
+    }
+
+    .card_info_con {
+      padding: 50px 30px;
+
+      .card_info {
+        text-align: center;
+
+        h2 {
+          font-family: "Inter", sans-serif;
+          font-size: 2em;
+          font-weight: 700;
+          color: $white;
+
+          span {
+            font-size: 1em;
+            color: $softViolet;
+          }
+        }
+
+        p {
+          font-family: "Lexend Deca", sans-serif;
+          color: $slightlyTransparentWhite;
+          font-size: 17px;
+          margin-top: 30px;
+        }
+      }
+
+      .card_stats {
+        display: grid;
+        grid-gap: 30px;
+        text-align: center;
+        margin-top: 50px;
+
+        h3 {
+          font-family: "Inter", sans-serif;
+          color: $white;
+          font-size: 2em;
+        }
+
+        p {
+          font-family: "Lexend Deca", sans-serif;
+          color: $veryslightlyTransparentWhite;
+          text-transform: uppercase;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    // RESPONSIVENESS
+    @media screen and (min-width: 900px) {
+      max-width: 1440px;
+      display: flex;
+      flex-direction: row-reverse;
+
+      .img_con {
+        background-image: url(./images/image-header-desktop.jpg);
+        height: auto;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: $border;
+        min-width: 400px;
+
+        &::before {
+          border-top-left-radius: 0px;
+          border-bottom-right-radius: $border;
+        }
+      }
+
+      .card_info_con {
+        padding: 50px;
+
+        .card_info {
+          text-align: left;
+        }
+
+        .card_stats {
+          grid-template-columns: auto auto auto;
+          margin-top: 70px;
+          max-width: 400px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
