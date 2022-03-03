@@ -13,9 +13,16 @@ body {
   display: grid;
   place-items: center;
   background-color: #090b1a;
+  min-height: 100vh;
 }
 
-body .card {
+body main {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body main .card {
   max-width: 375px;
   border-radius: 10px;
   background-color: #1b1938;
@@ -23,7 +30,7 @@ body .card {
   display: grid;
 }
 
-body .card .img_con {
+body main .card .img_con {
   width: 100%;
   height: 250px;
   background-image: url(./images/image-header-mobile.jpg);
@@ -34,7 +41,7 @@ body .card .img_con {
   position: relative;
 }
 
-body .card .img_con::before {
+body main .card .img_con::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -45,34 +52,34 @@ body .card .img_con::before {
   border-top-right-radius: 10px;
 }
 
-body .card .card_info_con {
+body main .card .card_info_con {
   padding: 50px 30px;
 }
 
-body .card .card_info_con .card_info {
+body main .card .card_info_con .card_info {
   text-align: center;
 }
 
-body .card .card_info_con .card_info h2 {
+body main .card .card_info_con .card_info h2 {
   font-family: "Inter", sans-serif;
   font-size: 2em;
   font-weight: 700;
   color: white;
 }
 
-body .card .card_info_con .card_info h2 span {
+body main .card .card_info_con .card_info h2 span {
   font-size: 1em;
   color: #aa5cdb;
 }
 
-body .card .card_info_con .card_info p {
+body main .card .card_info_con .card_info p {
   font-family: "Lexend Deca", sans-serif;
   color: rgba(255, 255, 255, 0.75);
   font-size: 17px;
   margin-top: 30px;
 }
 
-body .card .card_info_con .card_stats {
+body main .card .card_info_con .card_stats {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
@@ -80,13 +87,13 @@ body .card .card_info_con .card_stats {
   margin-top: 50px;
 }
 
-body .card .card_info_con .card_stats h3 {
+body main .card .card_info_con .card_stats h3 {
   font-family: "Inter", sans-serif;
   color: white;
   font-size: 2em;
 }
 
-body .card .card_info_con .card_stats p {
+body main .card .card_info_con .card_stats p {
   font-family: "Lexend Deca", sans-serif;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -94,8 +101,8 @@ body .card .card_info_con .card_stats p {
 }
 
 @media screen and (min-width: 900px) {
-  body .card {
-    max-width: 1440px;
+  body main .card {
+    max-width: 70rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -104,24 +111,24 @@ body .card .card_info_con .card_stats p {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  body .card .img_con {
+  body main .card .img_con {
     background-image: url(./images/image-header-desktop.jpg);
     height: auto;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 10px;
     min-width: 400px;
   }
-  body .card .img_con::before {
+  body main .card .img_con::before {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 10px;
   }
-  body .card .card_info_con {
+  body main .card .card_info_con {
     padding: 50px;
   }
-  body .card .card_info_con .card_info {
+  body main .card .card_info_con .card_info {
     text-align: left;
   }
-  body .card .card_info_con .card_stats {
+  body main .card .card_info_con .card_stats {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
     margin-top: 70px;
